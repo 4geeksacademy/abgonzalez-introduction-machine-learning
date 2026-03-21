@@ -1,7 +1,7 @@
 {
     "project_info": {
-        "notebook": "03-linear-regression-reg-demographic-health-data_mio.ipynb",
-        "date_created": "2026-03-21 13:01:48",
+        "notebook": "02-linear-regression-medical-insurance-cost.ipynb",
+        "date_created": "2026-03-21 13:38:47",
         "description": "Automatically generated encoding rules"
     },
     "categorical_encoding": {
