@@ -1,0 +1,86 @@
+{
+    "project_info": {
+        "notebook": "03-linear-regression-reg-demographic-health-data_mio.ipynb",
+        "date_created": "2026-03-21 13:01:48",
+        "description": "Automatically generated encoding rules"
+    },
+    "categorical_encoding": {
+        "smoker": {
+            "type": "binary",
+            "mapping": {
+                "yes": 1,
+                "no": 0
+            },
+            "encoded_column": "smoker_encoded",
+            "original_values": [
+                "yes",
+                "no"
+            ],
+            "description": "Binary encoding for smoker"
+        },
+        "region": {
+            "type": "one-hot",
+            "method": "pd.get_dummies with drop_first=True",
+            "original_values": [
+                "southwest",
+                "southeast",
+                "northwest",
+                "northeast"
+            ],
+            "encoded_columns": [
+                "region_northwest",
+                "region_southeast",
+                "region_southwest"
+            ],
+            "dropped_category": "northeast",
+            "description": "One-hot encoding for region"
+        }
+    },
+    "feature_engineering": {
+        "interaction_features": {},
+        "polynomial_features": {},
+        "other_features": {}
+    },
+    "target_transformation": {
+        "original_target": "charges",
+        "transformed_target": "charges_log",
+        "transformation": "log1p",
+        "formula": "np.log1p(charges)",
+        "description": "Natural log transformation to reduce skewness",
+        "inverse_transformation": "np.expm1(charges_log)",
+        "reason": "Original target was right-skewed (skewness > 1.0)"
+    },
+    "features_removed": {
+        "children": {
+            "reason": "Weak correlation with target",
+            "correlation_with_target": 0.068,
+            "action": "Dropped from dataset"
+        }
+    },
+    "final_features": {
+        "numeric": [
+            "age",
+            "bmi",
+            "charges",
+            "age_smoker",
+            "bmi_smoker",
+            "smoker_encoded"
+        ],
+        "encoded_binary": [
+            "smoker_encoded"
+        ],
+        "encoded_one_hot": [
+            "region_northwest",
+            "region_southeast",
+            "region_southwest"
+        ],
+        "target": "charges_log",
+        "total_features": 13
+    },
+    "usage_notes": {
+        "prediction": "When making predictions, ensure new data follows the same encoding scheme",
+        "categorical_handling": "For binary encoding, use the mapping provided. For one-hot encoding, set all dummies to 0 if the category is the dropped one",
+        "missing_values": "Handle missing values before applying encodings",
+        "feature_order": "Maintain the same feature order as in final_features for model compatibility"
+    }
+}
