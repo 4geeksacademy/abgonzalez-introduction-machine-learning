@@ -1,0 +1,226 @@
+{
+    "project_info": {
+        "notebook": "01-logistic-regression-bank-marketing-campaign-data.ipynb",
+        "date_created": "2026-03-22 14:43:25",
+        "description": "Automatically generated encoding rules"
+    },
+    "categorical_encoding": {
+        "contact": {
+            "type": "binary",
+            "mapping": {
+                "telephone": 0,
+                "cellular": 1
+            },
+            "encoded_column": "contact_encoded",
+            "original_values": [
+                "telephone",
+                "cellular"
+            ],
+            "description": "Binary encoding for contact"
+        },
+        "poutcome": {
+            "type": "one-hot",
+            "method": "pd.get_dummies with drop_first=True",
+            "original_values": [
+                "nonexistent",
+                "failure",
+                "success"
+            ],
+            "encoded_columns": [
+                "poutcome_nonexistent",
+                "poutcome_success"
+            ],
+            "dropped_category": "failure",
+            "description": "One-hot encoding for poutcome"
+        },
+        "month": {
+            "type": "one-hot",
+            "method": "pd.get_dummies with drop_first=True",
+            "original_values": [
+                "may",
+                "jun",
+                "jul",
+                "aug",
+                "oct",
+                "nov",
+                "dec",
+                "mar",
+                "apr",
+                "sep"
+            ],
+            "encoded_columns": [
+                "month_aug",
+                "month_dec",
+                "month_jul",
+                "month_jun",
+                "month_mar",
+                "month_may",
+                "month_nov",
+                "month_oct",
+                "month_sep"
+            ],
+            "dropped_category": "apr",
+            "description": "One-hot encoding for month"
+        },
+        "job": {
+            "type": "one-hot",
+            "method": "pd.get_dummies with drop_first=True",
+            "original_values": [
+                "housemaid",
+                "services",
+                "admin.",
+                "blue-collar",
+                "technician",
+                "retired",
+                "management",
+                "unemployed",
+                "self-employed",
+                "unknown",
+                "entrepreneur",
+                "student"
+            ],
+            "encoded_columns": [
+                "job_blue-collar",
+                "job_entrepreneur",
+                "job_housemaid",
+                "job_management",
+                "job_retired",
+                "job_self-employed",
+                "job_services",
+                "job_student",
+                "job_technician",
+                "job_unemployed",
+                "job_unknown"
+            ],
+            "dropped_category": "admin.",
+            "description": "One-hot encoding for job"
+        },
+        "default": {
+            "type": "one-hot",
+            "method": "pd.get_dummies with drop_first=True",
+            "original_values": [
+                "no",
+                "unknown",
+                "yes"
+            ],
+            "encoded_columns": [
+                "default_unknown",
+                "default_yes"
+            ],
+            "dropped_category": "no",
+            "description": "One-hot encoding for default"
+        }
+    },
+    "feature_engineering": {
+        "interaction_features": {
+            "low_pdays_high_duration": {
+                "description": "Interaction or derived feature: low_pdays_high_duration",
+                "formula": "To be documented manually"
+            },
+            "euribor3m_x_nr_employed": {
+                "description": "Interaction or derived feature: euribor3m_x_nr_employed",
+                "formula": "To be documented manually"
+            },
+            "poutcome_nonexistent": {
+                "description": "Interaction or derived feature: poutcome_nonexistent",
+                "formula": "To be documented manually"
+            },
+            "poutcome_success": {
+                "description": "Interaction or derived feature: poutcome_success",
+                "formula": "To be documented manually"
+            },
+            "month_aug": {
+                "description": "Interaction or derived feature: month_aug",
+                "formula": "To be documented manually"
+            },
+            "month_dec": {
+                "description": "Interaction or derived feature: month_dec",
+                "formula": "To be documented manually"
+            },
+            "month_jul": {
+                "description": "Interaction or derived feature: month_jul",
+                "formula": "To be documented manually"
+            },
+            "month_jun": {
+                "description": "Interaction or derived feature: month_jun",
+                "formula": "To be documented manually"
+            },
+            "month_mar": {
+                "description": "Interaction or derived feature: month_mar",
+                "formula": "To be documented manually"
+            },
+            "month_may": {
+                "description": "Interaction or derived feature: month_may",
+                "formula": "To be documented manually"
+            },
+            "month_nov": {
+                "description": "Interaction or derived feature: month_nov",
+                "formula": "To be documented manually"
+            },
+            "month_oct": {
+                "description": "Interaction or derived feature: month_oct",
+                "formula": "To be documented manually"
+            },
+            "month_sep": {
+                "description": "Interaction or derived feature: month_sep",
+                "formula": "To be documented manually"
+            },
+            "job_blue-collar": {
+                "description": "Interaction or derived feature: job_blue-collar",
+                "formula": "To be documented manually"
+            },
+            "job_entrepreneur": {
+                "description": "Interaction or derived feature: job_entrepreneur",
+                "formula": "To be documented manually"
+            },
+            "job_housemaid": {
+                "description": "Interaction or derived feature: job_housemaid",
+                "formula": "To be documented manually"
+            },
+            "job_management": {
+                "description": "Interaction or derived feature: job_management",
+                "formula": "To be documented manually"
+            },
+            "job_retired": {
+                "description": "Interaction or derived feature: job_retired",
+                "formula": "To be documented manually"
+            },
+            "job_self-employed": {
+                "description": "Interaction or derived feature: job_self-employed",
+                "formula": "To be documented manually"
+            },
+            "job_services": {
+                "description": "Interaction or derived feature: job_services",
+                "formula": "To be documented manually"
+            },
+            "job_student": {
+                "description": "Interaction or derived feature: job_student",
+                "formula": "To be documented manually"
+            },
+            "job_technician": {
+                "description": "Interaction or derived feature: job_technician",
+                "formula": "To be documented manually"
+            },
+            "job_unemployed": {
+                "description": "Interaction or derived feature: job_unemployed",
+                "formula": "To be documented manually"
+            },
+            "job_unknown": {
+                "description": "Interaction or derived feature: job_unknown",
+                "formula": "To be documented manually"
+            },
+            "default_unknown": {
+                "description": "Interaction or derived feature: default_unknown",
+                "formula": "To be documented manually"
+            },
+            "default_yes": {
+                "description": "Interaction or derived feature: default_yes",
+                "formula": "To be documented manually"
+            }
+        },
+        "polynomial_features": {},
+        "other_features": {}
+    },
+    "target_transformation": {
+        "data_cleaning": {
+            "duplicates_removed": 
