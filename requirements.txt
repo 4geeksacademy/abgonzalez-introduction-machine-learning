@@ -15,3 +15,6 @@ sqlalchemy>=2.0.38
 sympy>=1.10.1
 xgboost
 imbalanced-learn
+scikit-learn
+lightgbm
+lightgbm>=3.3.2
